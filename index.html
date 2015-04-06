@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="" />
+    <meta name="author" content="Julian Ciccioli" />
+    <meta name="description" content="" />
+
+    <title>jPinning</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="assets/css/prism.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jPinning.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/jPinning.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>jPinning</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#getting-started">Getting started</a></li>
+          <li><a href="#settings">Settings</a></li>
+          <li><a href="#get-it">Get it now</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="intro">
+        <p>jPinning is a small and simple jquery plugin to pin your headers only while the users are scrolling up.</p>
+      </section>
+
+      <section id="getting-started">
+        <div class="wrapper">
+          <h2>Getting started</h2>
+          <div class="box">
+            <p>Set up your HTML markup.</p>
+            <pre><code class="language-markup">
+&lt;header class="your-header-class"&gt;
+  ...
+&lt;/header&gt;
+</code></pre>
+          </div>
+          <div class="box">
+            <p>Move the /jPinning folder into your project</p>
+          </div>
+          <div class="box">
+            <p>Add jPinning.min.css in your &lt;head&gt;</p>
+            <pre><code class="language-markup">
+&lt;link rel="stylesheet" type="text/css" href="jPinning/jPinning.min.css"/&gt;
+</code></pre>
+          </div>
+          <div class="box">
+            <p>Add jPinning.min.js before your closing &lt;body&gt; tag, after jQuery (requires jQuery 1.7 +)</p>
+            <pre><code class="language-markup">
+&lt;script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="jPinning/jPinning.min.js"&gt;&lt;/script&gt;
+</code></pre>
+          </div>
+          <div class="box">
+            <p>Initialize your slider in your script file or an inline script tag</p>
+            <pre><code class="language-javascript">
+$(function(){
+  $('.your-header-class').jPinning({
+    setting-name: setting-value
+  });
+});
+</code></pre>
+          </div>
+          <div class="box">
+            <p>When complete, your HTML should look something like:</p>
+            <pre><code class="language-markup">
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;My Awesome Website&lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="jPinning/jPinning.min.css"/&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;header class="your-header-class"&gt;
+    ...
+  &lt;/header&gt;
+
+  &lt;script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="jPinning/jPinning.min.js"&gt;&lt;/script&gt;
+
+  &lt;script type="text/javascript"&gt;
+    $(function(){
+      $('.your-header-class').jPinning({
+        setting-name: setting-value
+      });
+    });
+  &lt;/script&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="settings">
+        <div class="wrapper">
+          <h2>Settings</h2>
+          <ul class="box">
+            <li><p><strong>Delay</strong></p></li>
+            <li><p><strong>Type:</strong> int(ms)</p></li>
+            <li><p><strong>Default:</strong> 0</p></li>
+            <li><p>Response time for header to hide or show in miliseconds.</p></li>
+          </ul>
+          <ul class="box">
+            <h2>Events</h2>
+            <li><p><strong>onPin</strong></p></li>
+            <li><p><strong>Arguments:</strong> none</p></li>
+            <li><p>Fires when the header shows up.</p></li>
+          </ul>
+          <ul class="box">
+            <li><p><strong>onUnpin</strong></p></li>
+            <li><p><strong>Arguments:</strong> none</p></li>
+            <li><p>Fires when the header hides out.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="get-it">
+        <div class="wrapper">
+          <h2>Get it now</h2>
+          <div class="box">
+            <a class="button" href="" target="_blank">View on Github</a>
+          </div>
+          <div class="box">
+            <p>Or install it with bower:<p>
+            <pre><code class="language-bash">
+bower install jPinning
+</code></pre>  
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="mailto:ju.ciccio@gmail.com">ju.ciccio@gmail.com</a>
+    </div>
+
+    <script type="text/javascript">
+      $(function(){
+        $('.header').jPinning();
+      });
+    </script>
+  </body>
+</html>

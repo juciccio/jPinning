@@ -1,0 +1,228 @@
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer,
+header, hgroup, main, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration  {
+    -webkit-appearance: none;
+}
+
+a,
+a:focus {
+  outline: 0 none;
+  text-decoration: none;
+}
+
+/* General */
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  -ms-overflow-y: visible;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+	/*background: url('../images/concrete_seamless.png') repeat;*/
+	background: #F0F0F0;
+	font-family: "Lato","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+	height: 100%;
+  overflow-y: scroll;
+}
+
+.main {
+  padding-top: 120px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 600px;
+	position: relative;
+}
+
+/* Texts & Titles */
+h1,
+h2 {
+	color: #666;
+	font-family: 'Lobster'
+}
+
+h1 {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+p {
+	font-size: 15px;
+}
+
+strong {
+	font-weight: 600;
+}
+
+/* Header */
+.header {
+  background-color: #fff;
+  padding: 15px 30px;
+}
+
+.header h1 {
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.header p {
+	color: #666;
+	font-style: italic;
+}
+
+/* Navs */
+.main-nav ul {
+	text-align: center;
+}
+
+.main-nav li {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.main-nav a {
+	color: #59ADF7;
+	font-size: 15px;
+}
+
+/* Sections */
+section {
+	margin-bottom: 60px;
+	padding: 40px 0;
+	position: relative;
+}
+
+.box {
+	border-bottom: 1px solid #666;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+ul.box {
+	text-align: left;
+}
+
+.box li {
+	margin-bottom: 15px;
+}
+
+.box li:last-child {
+	margin-bottom: 0;
+}
+
+.box pre {
+	margin-top: 10px;
+}
+
+/* Intro section */
+.intro p {
+	font-size: 18px;
+	font-style: italic;
+	text-align: center;
+}
+
+/* Settings section */
+#settings {
+	background-color: #fff;
+}
+
+/* Footer */
+.footer {
+	padding: 15px 0;
+	text-align: center;
+}
+
+.footer a {
+	color: #59adf7;
+	font-size: 13px;
+}
+
+/* Utilities */
+.button {
+	background-color: #59adf7;
+	color: #fff;
+	display: inline-block;
+	font-size: 17px;
+	padding: 15px 30px;
+	-moz-transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	transition: 0.3s all;
+}
+
+.button:hover {
+	transform: scale(1.1, 1.1);
+}
+
+/* Responsive */
+@media only screen and (max-width : 480px) {
+	section {
+		padding: 20px 10px;
+		margin-bottom: 20px;
+	}
+}
