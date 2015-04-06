@@ -1,0 +1,32 @@
+{
+  "name": "jPinning",
+  "version": "0.1.0",
+  "authors": [
+    "Julian Ciccioli <ju.ciccio@gmail.com>"
+  ],
+  "description": "Pin your header when scrolling down, unpin it when scrolling up.",
+  "main": ["assets/jPinning.min.js","assets/jPinning.min.css"],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "pin",
+    "unpin",
+    "jquery",
+    "header",
+    "nav"
+  ],
+  "license": "MIT",
+  "homepage": "http://juciccio.github.io/jPinning/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "index.html"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
+}
