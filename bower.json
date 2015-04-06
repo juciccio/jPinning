@@ -5,7 +5,7 @@
     "Julian Ciccioli <ju.ciccio@gmail.com>"
   ],
   "description": "Pin your header when scrolling down, unpin it when scrolling up.",
-  "main": ["assets/jPinning.min.js","assets/jPinning.min.css"],
+  "main": ["jPinning/jPinning.min.js","jPinning/jPinning.min.css"],
   "moduleType": [
     "node"
   ],
