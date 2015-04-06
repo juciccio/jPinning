@@ -1,7 +1,7 @@
 ### jPinning
 jPinning is a small and simple jquery plugin to pin your headers only while the users are scrolling up.
 
-### Demo
+### Demo & usage
 http://juciccio.github.io/jPinning/
 
 ### Dependencies
