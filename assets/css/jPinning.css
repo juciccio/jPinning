@@ -21,7 +21,7 @@
 	transform: translateY(-100%);
 }
 
-.pinning-nav.top {
+.pinning-nav.pinning-top {
   background-color: #fff;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
