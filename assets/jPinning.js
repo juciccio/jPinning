@@ -20,6 +20,13 @@
 			status: 'pinned'
 		};
 
+		var classes = {
+			nav: 			'pinning-nav',
+			pinned: 	'pinned',
+			unpinned: 'unpinned',
+			top: 			'pinning-top'
+		};
+
 		var methods = {
 			/*
 			* This execute the passed function x miliseconds later where x is passed time as miliseconds
@@ -61,7 +68,7 @@
 				/*
 				* This will add the needed classes for the header to work properly
 				*/
-				elements.target.addClass('pinning-nav');
+				elements.target.addClass(classes.nav);
 				elements.target.css('position', 'fixed');
 			},
 
@@ -72,7 +79,7 @@
 				*/
 				if( methods.isUnpinned() ){
 					elements.status = 'pinned';
-					elements.target.removeClass('unpinned').addClass('pinned');
+					elements.target.removeClass(classes.unpinned).addClass(classes.pinned);
 					settings.onPin.call( elements.target );
 				}
 			},
@@ -85,7 +92,10 @@
 
 				if( methods.isPinned() ){
 					elements.status = 'unpinned';
-					elements.target.removeClass('pinned top').addClass('unpinned');
+					elements.target
+						.removeClass(classes.pinned)
+						.removeClass(classes.top)
+						.addClass(classes.unpinned);
 					settings.onUnpin.call( elements.target );
 				}
 			},
@@ -98,7 +108,7 @@
 				var st = $(window).scrollTop();
 
 				if ( st == 0 ){
-					elements.target.addClass('top');
+					elements.target.addClass(classes.top);
 				}
 
 			  if ( st >= elements.lastScrollTop ){
