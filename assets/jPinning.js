@@ -105,17 +105,16 @@
 				* This function will add "top" class to the header when it reachs the top of the page.
 				* Also, it will call pin() or unpin() functions depending if the user is scrolling up or down.
 				*/
-				var st = elements.window.scrollTop(),
-            wHeight = elements.window.height();
+				var st = $(window).scrollTop();
 
 				if ( st == 0 ){
 					elements.target.addClass(classes.top);
 				}
 
-			  if ( st <= elements.lastScrollTop && st < wHeight ){
-			    methods.pin();
-			  } else {
+			  if ( st >= elements.lastScrollTop ){
 			    methods.unpin();
+			  } else {
+			    methods.pin();
 			  }
 
 			  elements.lastScrollTop = st;
