@@ -7,7 +7,7 @@
 	$.fn.jPinning = function( options ) {
 		// Default settings
 		var defaults = {
-			delay: 0, //response time for header to hide or show in miliseconds
+			offset: false, //offset for header to hide or show in pixels
 			onPin: function(){}, //Fires when the header shows up
 			onUnpin: function(){} //Fires when the header hides out
 		};
@@ -28,27 +28,11 @@
 		};
 
 		var methods = {
-			/*
-			* This execute the passed function x miliseconds later where x is passed time as miliseconds
-			*/
-			debounce: function(func, wait, immediate) {
-			  var timeout;
-			  return function() {
-			    var context = this, args = arguments;
-			    var later = function() {
-			      timeout = null;
-			      if (!immediate) func.apply(context, args);
-			    };
-			    var callNow = immediate && !timeout;
-			    clearTimeout(timeout);
-			    timeout = setTimeout(later, wait);
-			    if (callNow) func.apply(context, args);
-			  };
-			},
 
 			isUnpinned: function(){
-				/*
+				/**
 				* Check if header is unpinned
+				* @return boolean
 				*/
 				if( elements.status == 'unpinned' )
 					return true;
@@ -56,8 +40,9 @@
 			},
 
 			isPinned: function(){
-				/*
+				/**
 				* Check if header is pinned
+        * @return boolean
 				*/
 				if( elements.status == 'pinned' )
 					return true;
@@ -100,21 +85,47 @@
 				}
 			},
 
+      calcOffset: function(st){
+        /**
+         * Check if offset is setted and if so calculate it
+         * @return boolean
+         */
+
+        if( settings.offset == 'auto' ){
+          settings.offset = elements.target.outerHeight();
+        }
+
+        if( settings.offset ){
+          if( st > settings.offset ){
+            return true;
+          }else {
+            return false;
+          }
+        }else {
+          return true;
+        }
+      },
+
 			pinHandler: function(){
 				/* 
 				* This function will add "top" class to the header when it reachs the top of the page.
-				* Also, it will call pin() or unpin() functions depending if the user is scrolling up or down.
+				* Also it will call pin() or unpin() functions depending if the user is scrolling up or down.
 				*/
-				var st = $(window).scrollTop();
+				var st = elements.window.scrollTop(),
+            wHeight = elements.window.height();
 
 				if ( st == 0 ){
 					elements.target.addClass(classes.top);
 				}
-
-			  if ( st >= elements.lastScrollTop ){
-			    methods.unpin();
+			  if ( st <= elements.lastScrollTop ){
+          /* Scrolling up */
+          methods.pin();
 			  } else {
-			    methods.pin();
+          /* Scrolling down */
+          var offset = methods.calcOffset(st);
+          if( offset ){
+            methods.unpin();
+          }
 			  }
 
 			  elements.lastScrollTop = st;
@@ -125,7 +136,7 @@
 		return this.each(function() {
 			elements.target = $(this); //Get initialized element
 			methods.prepare(); //Prepare element
-			$(window).on( 'scroll', methods.debounce( methods.pinHandler, settings.delay ) ); //Call handler on scroll
+			$(window).on( 'scroll', methods.pinHandler ); //Call handler on scroll
 		});
 
 	};
